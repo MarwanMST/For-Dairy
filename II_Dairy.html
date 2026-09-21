@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Goated Friend</title>
+    <!-- استدعاء خطوط عربية أنيقة -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --fa-purple-light: #e9d5ff;
+            --fa-purple-mid: #c084fc;
+            --fa-purple-dark: #7e22ce;
+            --fa-cyan: #a5f3fc;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --text-dark: #1e1b4b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            /* تدرج لوني يجمع بين البنفسجي الفاتح والأزرق المائي */
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* فقاعات عائمة في الخلفية (Frutiger Aero Effect) */
+        .bg-bubbles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: radial-gradient(circle at 30% 30%, rgba(204, 74, 255, 0.9), rgba(255,255,255,0.1));
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1), inset 0 -5px 15px rgba(192,132,252,0.3);
+            animation: floatUp 15s infinite ease-in;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.8); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--glass-border);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--fa-purple-dark);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--fa-purple-dark);
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        .glossy-btn {
+            background: linear-gradient(to bottom, #ffffff 0%, #e9d5ff 45%, #cb9cfa 50%, #d2adfa 100%);
+            color: var(--fa-purple-dark);
+            border: 1px solid #a855f7;
+            padding: 10px 25px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 1), 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .glossy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 1), 0 8px 20px rgba(192, 132, 252, 0.4);
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /* صورة كبيرة بارزة في الأعلى */
+            background: url('https://images.unsplash.com/photo-1618609377866-6367980562e3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(224, 195, 252, 0.3), rgba(142, 197, 252, 0.7));
+        }
+
+        .hero-glass-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 40px;
+            padding: 60px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(255,255,255,0.5);
+            max-width: 800px;
+            z-index: 10;
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-glass-card h1 {
+            font-size: 4.5rem;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(126, 34, 206, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .hero-glass-card p {
+            font-size: 1.5rem;
+            color: #f3e8ff;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .journey-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* الخط الواصل بين الأقسام */
+        .journey-line {
+            position: absolute;
+            top: 100px; bottom: 100px;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, transparent, var(--fa-purple-mid), var(--fa-cyan), transparent);
+            transform: translateX(-50%);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .journey-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 120px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .journey-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .journey-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-img-container {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .journey-img-container img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 5px solid rgba(255,255,255,0.7);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .journey-img-container:hover img {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .journey-text {
+            flex: 1;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .journey-text h3 {
+            font-size: 2rem;
+            color: var(--fa-purple-dark);
+            margin-bottom: 15px;
+        }
+
+        .journey-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .message-section {
+            padding: 100px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            position: relative;
+        }
+
+        .message-section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(224, 195, 252, 0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        .premium-frame {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            /* برواز زجاجي مزدوج فخم */
+            border: 8px solid rgba(255, 255, 255, 0.9);
+            outline: 2px solid var(--fa-purple-mid);
+            outline-offset: -12px;
+            border-radius: 40px;
+            padding: 60px 50px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.2), 
+                inset 0 0 30px rgba(255, 255, 255, 1);
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 1s ease-out;
+        }
+
+        .premium-frame.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .premium-frame h2 {
+            font-size: 3.5rem;
+            color: var(--fa-purple-dark);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(255,255,255,1);
+        }
+
+        .premium-frame p {
+            font-size: 1.6rem;
+            line-height: 2;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .premium-frame .signature {
+            margin-top: 40px;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #9333ea;
+            font-family: cursive;
+        }
+
+        footer {
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 30px;
+            font-weight: 700;
+            color: var(--fa-purple-dark);
+            border-top: 1px solid white;
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; padding: 15px; }
+            .hero-glass-card h1 { font-size: 3rem; }
+            .journey-item, .journey-item:nth-child(even) { 
+                flex-direction: column; 
+                text-align: center;
+                gap: 20px;
+            }
+            .journey-line { display: none; }
+            .premium-frame h2 { font-size: 2.5rem; }
+            .premium-frame p { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- مشغل الموسيقى -->
+    <audio id="bgMusic" loop>
+        <source src="dairy.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- فقاعات الخلفية -->
+    <div class="bg-bubbles" id="bubblesContainer"></div>
+
+    <nav class="navbar">
+        <div class="nav-brand">💜16 Years Of Happiness🎉</div>
+        <div class="nav-links">
+            <a href="#hero">Start 🏠</a>
+            <a href="#journey">Memories✨</a>
+            <a href="#message">Message📩</a>
+        </div>
+        <button class="glossy-btn" id="musicToggle">
+            <span id="musicIcon">🎵</span> دوس هنا بعد ما تخلص
+        </button>
+    </nav>
+
+    <!-- قسم البداية -->
+    <section id="hero" class="hero-section">
+        <div class="hero-glass-card">
+            <h1>كل سنة وأنت طيب! 🎂</h1>
+            <p>النهارده مش أي يوم ده يوم ميلاد الاسطورة وشكولاطتنا حبيت اعمل الموقع البسيط كهديه متواضعه وبسيطه كل عام وانت بخير وبافضل حال ان شاء الله</p>
+            <a href="#journey" class="glossy-btn" style="text-decoration: none; padding: 15px 40px; font-size: 1.3rem;">
+               انزل تحت شوف بسرعه الفضايح👇
+            </a>
+        </div>
+    </section>
+
+    <!-- قسم الـ 10 صور (الرحلة) -->
+    <section id="journey" class="journey-section">
+        <div class="journey-line"></div>
+
+        <!-- الصورة 1 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="1.jpeg" alt="اوف عالكريزما">
+            </div>
+            <div class="journey-text">
+                <h3>اوف عالكريزما 🔥</h3>
+                <p>ده انا اخبي صحبتي بقى عشان العالميه وصل بالسماعه كمان يا رجولة</p>
+            </div>
+        </div>
+
+        <!-- الصورة 2 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="2.jpeg" alt="روشنه عشوائيه بقى وكده">
+            </div>
+            <div class="journey-text">
+                <h3>روشنه عشوائيه بقى وكده🥵</h3>
+                <p>ارحم يسطى البنات مش شايفه غيرك عالكوكب</p>
+            </div>
+        </div>
+
+        <!-- الصورة 3 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="3.jpeg" alt="النظرة الجديه ">
+            </div>
+            <div class="journey-text">
+                <h3>Respect +999 😎</h3>
+                <p>الشخصيه القوية ذات العين الواسعه التي لا ترحم 😎</p>
+            </div>
+        </div>
+
+        <!-- الصورة 4 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="9.jpeg" alt="الايفونات الجامده">
+            </div>
+            <div class="journey-text">
+                <h3>الايفونات الجامده 🤑</h3>
+                <p>واضحك عايز تعنس الرجاله يا دولي عايز كواليتي فوق العظمه ديه كمان 😜</p>
+            </div>
+        </div>
+
+        <!-- الصورة 5 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="6.jpeg" alt="Sigma">
+            </div>
+            <div class="journey-text">
+                <h3>Sigma Sigma Boy 😎🗿</h3>
+                <p>سيجما بقى واديلوا يابا</p>
+            </div>
+        </div>
+
+        <!-- الصورة 6 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="7.jpeg" alt="ابتسم للحياة">
+            </div>
+            <div class="journey-text">
+                <h3>ابتسم للحياة 😊</h3>
+                <p>هو ده بقى محمد الي من جواه بجد الكيوت الهادي 🥰</p>
+            </div>
+        </div>
+
+        <!-- الصورة 7 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="8.jpeg" alt="التزنج من البحر 🌊">
+            </div>
+            <div class="journey-text">
+                <h3>التزنج من البحر 🌊</h3>
+                <p>دعونا نكون زنوج فوق زنوجتنا 🖤</p>
+            </div>
+        </div>
+
+        <!-- الصورة 8 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="10.jpeg" alt="كيوت بوي">
+            </div>
+            <div class="journey-text">
+                <h3>So cute 😊</h3>
+                <p>حاسس ملامحك متغيرة حبه هنا تقريبا عشان الكاميرا منعكسه بس مش مهم المهم هو الكيوت الل في الشاشه ده</p>
+            </div>
+        </div>
+
+        <!-- الصورة 9 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="4.jpeg" alt="كيوتي">
+            </div>
+            <div class="journey-text">
+                <h3>كوتي امور كوتي شطور 🥰</h3>
+                <p>برضو هنا حاسس بشوية تغير بس برضو الجانب الكيوت عندك حلو ♥</p>
+            </div>
+        </div>
+
+        <!-- الصورة 10 -->
+        <div class="journey-item scroll-anim">
+            <div class="journey-img-container">
+                <img src="11.jpeg" alt="الجانب الفكاهي">
+            </div>
+            <div class="journey-text">
+                <h3>الجانب الفكاهي 😄</h3>
+                <p>نفرفش حبه ومالوا مهي كانت تالته اعدادي اللي انا مزنوق فيها اهو دلوقتي 😂</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="message" class="message-section">
+        <div class="premium-frame scroll-anim">
+            <h2>رسالة من MST💜</h2>
+            <p>
+                بص يا محمد مش مهم تبقى زنجي المهم تكون مبسوط وفرحان حتى لو جاي من جنوب افريقيا 
+                <br><br>
+               النهارده عدى على يوم ولادتك 16 سنه وده يعني انك بقيت كبير وكلما كبرت زادت المسؤليه مش مشكله تلعب وتلهو وتعمل كل اللي انت عايزه بس دائما افتكر ربك في كل وقت وقرب منه ومتقصرش ابدا في عباداتك وحاول تبطل اي ذنب انت بتعمله علشان العمر قصير جدا وبيجري بسرعه واتمنى ليك عام مليئ بالسعاده وتحقق انجازاتك
+            </p>
+            <div class="signature">Marwan_MST</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>By MST For ii_Dairy✨</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // توليد فقاعات عائمة بشكل عشوائي
+            const bubblesContainer = document.getElementById('bubblesContainer');
+            for(let i=0; i<15; i++) {
+                let bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                let size = Math.random() * 80 + 30; // من 30 لـ 110 بيكسل
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.left = Math.random() * 100 + 'vw';
+                bubble.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                bubble.style.animationDelay = (Math.random() * 5) + 's';
+                bubblesContainer.appendChild(bubble);
+            }
+
+            // نظام تشغيل الموسيقى
+            const musicBtn = document.getElementById('musicToggle');
+            const bgMusic = document.getElementById('bgMusic');
+            let isPlaying = false;
+
+            musicBtn.addEventListener('click', () => {
+                if (!isPlaying) {
+                    bgMusic.volume = 0.5;
+                    bgMusic.play();
+                    isPlaying = true;
+                    musicBtn.innerHTML = '🔊 ايقاف هذا العبد من التكلم';
+                    musicBtn.style.background = 'linear-gradient(to bottom, #a7ffeb, #1de9b6)';
+                    musicBtn.style.borderColor = '#00bfa5';
+                    musicBtn.style.color = '#004d40';
+                } else {
+                    bgMusic.pause();
+                    isPlaying = false;
+                    musicBtn.innerHTML = '🎵 دوس هنا بعد ما تخلص';
+                    musicBtn.style.background = ''; // العودة للون الافتراضي
+                    musicBtn.style.borderColor = '';
+                    musicBtn.style.color = '';
+                }
+            });
+
+            // Intersection Observer (ظهور العناصر تدريجياً أثناء التمرير)
+            const observerOptions = {
+                threshold: 0.2 // العنصر يظهر لما 20% منه يكون في الشاشة
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.scroll-anim');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
